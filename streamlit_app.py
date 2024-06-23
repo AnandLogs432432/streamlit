@@ -32,7 +32,7 @@ st.line_chart(sales_by_month, y="Sales")
 st.write("## Your additions")
 st.write("### (1) add a drop down for Category (https://docs.streamlit.io/library/api-reference/widgets/st.selectbox)")
 
-unqiue_category = set(df['Category'])
+unique_category = set(df['Category'])
 
 st.selectbox("Please choose a category", unique_category)
 
