@@ -52,8 +52,12 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 
 df1 = df.set_index('Sub_Category')
 df1 = df1.loc[sub_cat]
+
 st.dataframe(df1)
 
+sales_by_month_sub = df1.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
+
+st.line_chart(sales_by_month_sub, y="Sales")
 
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
 st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
