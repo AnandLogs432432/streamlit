@@ -43,7 +43,7 @@ if 'Furniture' in cat:
   sub-cat = st.multiselect("Please choose a sub-category", ['Bookcases', 'Chairs', 'Tables', 'Furnishings'])
 
 elif 'Office Supplies' in cat:
-  sub-cat = st.multiselect("Please choose a sub-category", ['Labels', 'Storage', Art', 'Binders', 'Appliances', 'Paper', 'Envelopes', 'Fasteners', 'Supplies'])
+  sub-cat = st.multiselect("Please choose a sub-category", ['Labels', 'Storage', 'Art', 'Binders', 'Appliances', 'Paper', 'Envelopes', 'Fasteners', 'Supplies'])
 
 else:
   sub-cat = st.multiselect("Please choose a sub-category", ['Phones', 'Accessories', 'Machines', 'Copiers'])                         
