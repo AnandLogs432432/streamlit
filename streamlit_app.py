@@ -36,6 +36,11 @@ unique_category = set(df['Category'])
 
 st.selectbox("Please choose a category", unique_category)
 
+furniture_sub_cat = df['Sub_Category'].filter(like=['Bookcase', 'Chairs', 'Furniture', 'Tables'], axis=0)
+
+st.selectbox("Please choose a sub-category", furniture_sub_cat)
+
+
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
