@@ -40,13 +40,13 @@ cat = st.selectbox("Please choose a category", unique_category)
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
 
 if 'Furniture' in cat:
-  sub-cat == st.multiselect("Please choose a sub-category", ['Bookcases', 'Chairs', 'Tables', 'Furnishings'])
+  sub_cat = st.multiselect("Please choose a sub-category", ['Bookcases', 'Chairs', 'Tables', 'Furnishings'])
 
 elif 'Office Supplies' in cat:
-  sub-cat == st.multiselect("Please choose a sub-category", ['Labels', 'Storage', 'Art', 'Binders', 'Appliances', 'Paper', 'Envelopes', 'Fasteners', 'Supplies'])
+  sub_cat = st.multiselect("Please choose a sub-category", ['Labels', 'Storage', 'Art', 'Binders', 'Appliances', 'Paper', 'Envelopes', 'Fasteners', 'Supplies'])
 
 else:
-  sub-cat == st.multiselect("Please choose a sub-category", ['Phones', 'Accessories', 'Machines', 'Copiers'])                         
+  sub_cat = st.multiselect("Please choose a sub-category", ['Phones', 'Accessories', 'Machines', 'Copiers'])                         
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
