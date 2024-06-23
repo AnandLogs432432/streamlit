@@ -34,16 +34,20 @@ st.write("### (1) add a drop down for Category (https://docs.streamlit.io/librar
 
 unique_category = ['Furniture', 'Office Supplies', 'Technology']
 
-st.selectbox("Please choose a category", unique_category)
-
-st.write(print(unique_category))
-
-# furniture_sub_cat = df['Sub_Category'].filter(like=['Bookcase', 'Chairs', 'Furniture', 'Tables'], axis=0)
-
-# st.selectbox("Please choose a sub-category", furniture_sub_cat)
+cat = st.selectbox("Please choose a category", unique_category)
 
 
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
+
+if 'Furniture' in cat:
+  sub-cat = st.multiselect("Please choose a sub-category", ['Bookcases', 'Chairs', 'Tables', 'Furnishings'])
+
+elif 'Office Supplies' in cat:
+  sub-cat = st.multiselect("Please choose a sub-category", ['Labels', 'Storage', Art', 'Binders', 'Appliances', 'Paper', 'Envelopes', 'Fasteners', 'Supplies'])
+
+else:
+  sub-cat = st.multiselect("Please choose a sub-category", ['Phones', 'Accessories', 'Machines', 'Copiers'])                         
+
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
 st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
