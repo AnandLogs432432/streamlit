@@ -63,7 +63,7 @@ total_sales = sum(df1['Sales'])
 total_sales_rounded = '$'+str(round(total_sales, 2))
 total_profit = sum(df1['Profit'])
 total_profit_rounded = '$'+str(round(total_profit, 2))
-total_profit_margin = (total_sales/total_profit)*100
+total_profit_margin = (total_profit/total_sales)*100
 total_profit_margin_rounded = str(round(total_profit_margin, 2))+'%'
 
 st.metric('Total Sales', total_sales_rounded)
