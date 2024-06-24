@@ -53,32 +53,32 @@ if not sub_cat:
   st.stop()
 st.success(
 
-  st.write("### (3) show a line chart of sales for the selected items in (2)")
+st.write("### (3) show a line chart of sales for the selected items in (2)")
 
-  df1 = df.reset_index().set_index('Sub_Category')
-  df1 = df1.loc[sub_cat]
+df1 = df.reset_index().set_index('Sub_Category')
+df1 = df1.loc[sub_cat]
+
+st.dataframe(df1)
   
-  st.dataframe(df1)
+st.line_chart(data=df1, x='Order_Date', y='Sales')
   
-  st.line_chart(data=df1, x='Order_Date', y='Sales')
+st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
   
-  st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
+total_sales = sum(df1['Sales'])
+total_sales_rounded = '$'+str(round(total_sales, 2))
+total_profit = sum(df1['Profit'])
+total_profit_rounded = '$'+str(round(total_profit, 2))
+total_profit_margin = (total_profit/total_sales)*100
+total_profit_margin_rounded = str(round(total_profit_margin, 2))+'%'
   
-  total_sales = sum(df1['Sales'])
-  total_sales_rounded = '$'+str(round(total_sales, 2))
-  total_profit = sum(df1['Profit'])
-  total_profit_rounded = '$'+str(round(total_profit, 2))
-  total_profit_margin = (total_profit/total_sales)*100
-  total_profit_margin_rounded = str(round(total_profit_margin, 2))+'%'
+st.metric('Total Sales', total_sales_rounded)
+st.metric('Total Profit', total_profit_rounded)
+st.metric('Total Profit Margin', total_profit_margin_rounded)
   
-  st.metric('Total Sales', total_sales_rounded)
-  st.metric('Total Profit', total_profit_rounded)
-  st.metric('Total Profit Margin', total_profit_margin_rounded)
+st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
   
-  st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
+overall_profit_margin = sum(df['Profit'])/sum(df['Sales'])*100
+overall_profit_margin_rounded = str(round(overall_profit_margin, 2))+'%'
   
-  overall_profit_margin = sum(df['Profit'])/sum(df['Sales'])*100
-  overall_profit_margin_rounded = str(round(overall_profit_margin, 2))+'%'
-  
-  st.metric('Total Profit Margin', total_profit_margin_rounded, overall_profit_margin_rounded)
+st.metric('Total Profit Margin', total_profit_margin_rounded, overall_profit_margin_rounded)
 )
