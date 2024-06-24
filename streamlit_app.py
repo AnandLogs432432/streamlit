@@ -58,4 +58,11 @@ st.dataframe(df1)
 st.line_chart(data=df1, x='Ship_Date', y='Sales')
 
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
+
+total_sales = sum(df1['Sales'])
+total_profit = sum(df1['Profit'])
+
+st.metric('Total Sales', total_sales)
+st.metric('Total Profit', total_profit)
+
 st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
