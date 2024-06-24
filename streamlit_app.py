@@ -55,9 +55,7 @@ df1 = df1.loc[sub_cat]
 
 st.dataframe(df1)
 
-subcat_sales_by_month = df1.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
-
-st.line_chart(data=df1, x=subcat_sales_by_month, y='Sales')
+st.line_chart(data=df1, x='Order_Date', y='Sales')
 
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
 
