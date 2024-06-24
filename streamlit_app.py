@@ -48,11 +48,6 @@ elif 'Office Supplies' in cat:
 else:
   sub_cat = st.multiselect("Please choose a sub-category", ['Phones', 'Accessories', 'Machines', 'Copiers'])  
 
-if not sub_cat:
-  st.warning('Please select your sub-categories')
-  st.stop()
-st.success(
-
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 
 df1 = df.reset_index().set_index('Sub_Category')
@@ -81,4 +76,3 @@ overall_profit_margin = sum(df['Profit'])/sum(df['Sales'])*100
 overall_profit_margin_rounded = str(round(overall_profit_margin, 2))+'%'
   
 st.metric('Total Profit Margin', total_profit_margin_rounded, overall_profit_margin_rounded)
-)
