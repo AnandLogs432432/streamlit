@@ -53,7 +53,7 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 df1 = df.set_index('Sub_Category')
 df1 = df1.loc[sub_cat]
 
-st.dataframe(df1)
+st.dataframe(df)
 
 st.line_chart(data=df1, x='Ship_Date', y='Sales')
 
