@@ -60,7 +60,7 @@ if sub_cat:
   
   def plot():
 
-    dfs = {Sub_Category: df1[df1["Sub_Category"] == Sub_Category] for Sub_Category in Sub_Categories}
+    dfs = {Sub_Category: df1[df1["Sub_Category"] == Sub_Category] for Sub_Category in Sub_Category}
 
     fig = go.Figure()
     for Sub_Categories, df in dfs.items():
