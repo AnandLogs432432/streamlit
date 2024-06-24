@@ -78,6 +78,3 @@ if sub_cat:
   overall_profit_margin_rounded = str(round(overall_profit_margin, 2))+'%'
     
   st.metric('Total Profit Margin', total_profit_margin_rounded, overall_profit_margin_rounded)
-
-else:
-  st.write('ya motha')
