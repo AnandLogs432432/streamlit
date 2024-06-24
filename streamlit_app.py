@@ -50,7 +50,7 @@ else:
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 
-df1 = df.reset_index('Sub_Category')
+df1 = df.reindex('Sub_Category')
 df1 = df1.loc[sub_cat]
 
 st.dataframe(df1)
