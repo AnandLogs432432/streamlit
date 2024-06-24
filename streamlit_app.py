@@ -40,13 +40,13 @@ cat = st.selectbox("Please choose a category", unique_category)
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
 
 if 'Furniture' in cat:
-  sub_cat = st.multiselect("Please choose a sub-category", ['Bookcases', 'Chairs', 'Tables', 'Furnishings'])
+  sub_cat = st.multiselect("Please choose your sub-categories", ['Bookcases', 'Chairs', 'Tables', 'Furnishings'])
 
 elif 'Office Supplies' in cat:
-  sub_cat = st.multiselect("Please choose a sub-category", ['Labels', 'Storage', 'Art', 'Binders', 'Appliances', 'Paper', 'Envelopes', 'Fasteners', 'Supplies'])
+  sub_cat = st.multiselect("Please choose your sub-categories", ['Labels', 'Storage', 'Art', 'Binders', 'Appliances', 'Paper', 'Envelopes', 'Fasteners', 'Supplies'])
 
 else:
-  sub_cat = st.multiselect("Please choose a sub-category", ['Phones', 'Accessories', 'Machines', 'Copiers'])  
+  sub_cat = st.multiselect("Please choose your sub-categories", ['Phones', 'Accessories', 'Machines', 'Copiers'])  
 
 if sub_cat:
 
@@ -78,3 +78,6 @@ if sub_cat:
   overall_profit_margin_rounded = str(round(overall_profit_margin, 2))+'%'
     
   st.metric('Total Profit Margin', total_profit_margin_rounded, overall_profit_margin_rounded)
+
+else:
+  st.write('Choosing sub-categories will populate the rest of the form!')
