@@ -72,7 +72,7 @@ st.metric('Total Profit Margin', total_profit_margin_rounded)
 
 st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
 
-overall_profit_margin = sum(df['Profit'])/sum(df['Sales'])
+overall_profit_margin = sum(df['Profit'])/sum(df['Sales'])*100
 overall_profit_margin_rounded = str(round(overall_profit_margin, 2))+'%'
 
 st.metric('Total Profit Margin', total_profit_margin_rounded, overall_profit_margin_rounded)
