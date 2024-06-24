@@ -63,11 +63,11 @@ total_sales = sum(df1['Sales'])
 total_sales_rounded = '$'+str(round(total_sales, 2))
 total_profit = sum(df1['Profit'])
 total_profit_rounded = '$'+str(round(total_profit, 2))
-total_profit_margin = (total_sales/total_profit)*100
-total_profit_margin_rounded = str(round(total_profit_margin_rounded, 2))+'%'
+#total_profit_margin = (total_sales/total_profit)*100
+#total_profit_margin_rounded = str(round(total_profit_margin_rounded, 2))+'%'
 
 st.metric('Total Sales', total_sales_rounded)
 st.metric('Total Profit', total_profit_rounded)
-st.metric('Total Profit Margin', total_profit_margin_rounded)
+#st.metric('Total Profit Margin', total_profit_margin_rounded)
 
 st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
