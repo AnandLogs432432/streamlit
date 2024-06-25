@@ -53,11 +53,10 @@ if sub_cat:
   st.write("### (3) show a line chart of sales for the selected items in (2)")
 
   df1 = df.reset_index().set_index('Sub_Category')
-  #df1 = df1.loc[sub_cat]
-  df1 = df1[sub_cat]
+  df1 = df1.loc[sub_cat]
   st.dataframe(df1)
   
-  st.line_chart(data=df1, x='Order_Date', y='Sales')
+  st.line_chart(data=df1, x='Order_Date', y='Sales', x_label = 'Order Date', color=["#fd0", "#f0f", "#04f"])
   
   st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
   
