@@ -59,11 +59,11 @@ if sub_cat:
 
   def plot():
 
-    dfs = {Sub_Category: df1[df1["Sub_Category"] == Sub_Category] for Sub_Category in Sub_Categories}
+    dfs = {Sub_Category: df1[df1["Sub_Category"] == Sub_Category] for Sub_Category in sub_cat}
 
     fig = go.Figure()
     for Sub_Category, dfx in dfs.items():
-        fig = fig.add_trace(go.Scatter(x=dfx["Order_Date"], y=dfx["Sales"], name=country))
+        fig = fig.add_trace(go.Scatter(x=dfx["Order_Date"], y=dfx["Sales"], name=Sub_Category))
 
     st.plotly_chart(fig)
 
