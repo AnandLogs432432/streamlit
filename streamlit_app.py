@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.graph_objects as go
 import math
 
 st.title("Data App Assignment, on June 20th")
@@ -54,9 +56,20 @@ if sub_cat:
 
   df1 = df.reset_index().set_index('Sub_Category')
   df1 = df1.loc[sub_cat]
-  st.dataframe(df1)
+
+  def plot():
+
+    dfs = {Sub_Category: df1[df1["Sub_Category"] == Sub_Category] for Sub_Category in Sub_Categories}
+
+    fig = go.Figure()
+    for Sub_Category, dfx in dfs.items():
+        fig = fig.add_trace(go.Scatter(x=dfx["Order_Date"], y=dfx["Sales"], name=country))
+
+    st.plotly_chart(fig)
+
+  plot()
   
-  st.line_chart(data=df1, x='Order_Date', y='Sales', x_label = 'Order Date')
+  #st.line_chart(data=df1, x='Order_Date', y='Sales', x_label = 'Order Date')
   
   st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
   
