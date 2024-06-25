@@ -76,7 +76,7 @@ if sub_cat:
   overall_profit_margin = sum(df['Profit'])/sum(df['Sales'])*100
   overall_profit_margin_rounded = str(round(overall_profit_margin, 2))+'%'
     
-  st.metric('Total Profit Margin', total_profit_margin, overall_profit_margin)
+  st.metric('Total Profit Margin', total_profit_margin_rounded, overall_profit_margin_rounded)
 
 else:
   st.write('Choosing sub-categories will populate the rest of the form!')
