@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import math
 
-st.title("Data App Assignment (Anand Loganthan, DSBA 5122, 6/30/24")
+st.title("Data App Assignment (Anand Loganthan, DSBA 5122, 6/30/24)")
 
 st.write("### Input Data and Examples")
 df = pd.read_csv("Superstore_Sales_utf8.csv", parse_dates=True)
